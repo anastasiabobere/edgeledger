@@ -114,3 +114,71 @@ img {
 .team img {
   border-radius: 50%;
 }
+/* Callback Form */
+.callback-form {
+  width: 100%;
+  padding: 20px 0;
+}
+.callback-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+.callback-form .form-control {
+  margin-bottom: 15px;
+}
+.callback-form input {
+  height: 40px;
+  padding: 4px;
+  width: 100%;
+  border: #f5f5f5 1px solid;
+}
+.callback-form input:focus {
+  outline: 0;
+}
+.callback-form .btn {
+  padding: 12px 0;
+  margin-top: 20px;
+}
+
+/* Buttons footer */
+.social-btn {
+  width: 2em;
+  height: 2em;
+}
+.social-btn:hover {
+  color: #28a745;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 200px;
+}
+.footer .social > * {
+  margin-right: 30px;
+}
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: 120px;
+    padding: 20px;
+  }
+  .navbar a {
+    padding: 10px 10px;
+    margin: 0 3px;
+  }
+  .flex-items {
+    flex-direction: column;
+  }
+  .flex-collumns .collumn,
+  .flex-grid .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+  .team img {
+    width: 70%;
+  }
+}
