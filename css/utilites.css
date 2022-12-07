@@ -67,13 +67,17 @@
   padding: 20px;
 }
 /* Flex columns */
-.flex-columns .flex-reverse .row {
+
+.photo-reverse {
+  display: flex;
   flex-direction: row-reverse;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .flex-columns .row {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
 }
