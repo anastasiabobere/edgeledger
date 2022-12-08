@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="css/lightbox.min.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap"
       rel="stylesheet" />
@@ -18,7 +20,7 @@
   </head>
   <body id="home">
     <header class="hero">
-      <div id="navbar" class="navbar">
+      <div id="navbar" class="navbar top">
         <h1 class="logo">
           <span class="text-primary"
             ><svg
@@ -142,30 +144,80 @@
         </header>
         <div class="row">
           <div class="column">
-            <img
-              src="/image_resources/cases/cases1.jpg"
-              alt="People sitting around table" />
-            <img src="/image_resources/cases/cases2.jpg" alt="A laptop" />
+            <a
+              href="/image_resources/cases/cases1.jpg"
+              data-lightbox="cases"
+              data-title=" Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam,
+            corrupti!">
+              <img
+                src="/image_resources/cases/cases1.jpg"
+                alt="People sitting around table" />
+            </a>
+            <a
+              href="/image_resources/cases/cases2.jpg"
+              data-lightbox="cases"
+              data-title=" Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam,
+          corrupti!">
+              <img
+                src="/image_resources/cases/cases2.jpg"
+                alt="People sitting around table" />
+            </a>
           </div>
           <div class="column">
-            <img src="/image_resources/cases/cases3.jpg" alt="Diagramms" />
-            <img src="/image_resources/cases/cases4.jpg" alt="High buildings" />
+            <a
+              href="/image_resources/cases/cases3.jpg"
+              data-lightbox="cases"
+              data-title=" Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam,
+        corrupti!"
+              ><img src="/image_resources/cases/cases3.jpg" alt="Diagramms" />
+            </a>
+            <a
+              href="/image_resources/cases/cases4.jpg"
+              data-lightbox="cases"
+              data-title=" Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam,
+      corrupti!">
+              <img src="/image_resources/cases/cases4.jpg" alt="High buildings"
+            /></a>
           </div>
           <div class="column">
-            <img
-              src="/image_resources/cases/cases5.jpg"
-              alt="People shake hands" />
-            <img
-              src="/image_resources/cases/cases6.jpg"
-              alt="A woman standing and a lot of people in the background" />
+            <a
+              href="/image_resources/cases/cases5.jpg"
+              data-lightbox="cases"
+              data-title=" Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam,
+    corrupti!">
+              <img
+                src="/image_resources/cases/cases5.jpg"
+                alt="People shake hands"
+            /></a>
+            <a
+              href="/image_resources/cases/cases6.jpg"
+              data-lightbox="cases"
+              data-title=" Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam,
+      corrupti!">
+              <img
+                src="/image_resources/cases/cases6.jpg"
+                alt="A woman standing and a lot of people in the background"
+            /></a>
           </div>
           <div class="column">
-            <img
-              src="/image_resources/cases/cases7.jpg"
-              alt="Team holding hands" />
-            <img
-              src="/image_resources/cases/cases8.jpg"
-              alt="People happily working" />
+            <a
+              href="/image_resources/cases/cases7.jpg"
+              data-lightbox="cases"
+              data-title=" Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam,
+    corrupti!">
+              <img
+                src="/image_resources/cases/cases7.jpg"
+                alt="Team holding hands"
+            /></a>
+            <a
+              href="/image_resources/cases/cases8.jpg"
+              data-lightbox="cases"
+              data-title=" Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam,
+      corrupti!"
+              ><img
+                src="/image_resources/cases/cases8.jpg"
+                alt="People happily working"
+            /></a>
           </div>
         </div>
       </section>
@@ -322,5 +374,40 @@
       </div>
       <p>Copyright &copy; 2022 - EdgeLedger</p>
     </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"></script>
+    <script src="js/lightbox.min.js"></script>
+    <script>
+      const navbar = document.getElementById("navbar");
+      let scrolled = false;
+      window.onscroll = function () {
+        if (window.pageYOffset > 100) {
+          navbar.classList.remove("top");
+          if (!scrolled) {
+            navbar.style.transform = "translateY(-70px)";
+          }
+          setTimeout(function () {
+            navbar.style.transform = "translateY(0)";
+            scrolled = true;
+          }, 200);
+        } else {
+          navbar.classList.add("top");
+          scrolled = false;
+        }
+      };
+
+      $("#navbar a, .btn").on("click", function (e) {
+        if (this.hash !== "") {
+          e.preventDefault();
+          const hash = this.hash;
+          $("html,body").animate(
+            { scrollTop: $(hash).offset().top - 100 },
+            800
+          );
+        }
+      });
+    </script>
   </body>
 </html>
