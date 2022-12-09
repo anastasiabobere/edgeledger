@@ -58,8 +58,7 @@ img {
 }
 /* Header */
 .hero {
-  background-image: url("image_resources/home/showcase.jpg") no-repeat center
-    center/cover;
+  background-image: url("image_resources/home/showcase.jpg");
   height: 100vh;
   position: relative;
   color: #fff;
@@ -96,8 +95,7 @@ img {
   z-index: 10;
 }
 .hero.blog {
-  background-image: url("image_resources/home/showcase.jpg") no-repeat center
-    center/cover;
+  background-image: url("image_resources/home/showcase.jpg");
   height: 30vh;
 }
 
