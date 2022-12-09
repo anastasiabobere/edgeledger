@@ -96,7 +96,7 @@ img {
   z-index: 10;
 }
 .hero .blog {
-  background: url("image_resources/home/showcase.jpg") no-repeat center
+  background-image: url("image_resources/home/showcase.jpg") no-repeat center
     center/cover;
   height: 30vh;
 }
